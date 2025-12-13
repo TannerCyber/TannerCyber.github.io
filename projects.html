@@ -33,7 +33,7 @@
 </head>
 
 <body>
-  <nav>
+    <nav>
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
     <a href="labs.html">Labs</a>
@@ -41,15 +41,54 @@
   </nav>
 
   <h1>Projects</h1>
-  <p><strong>Cybersecurity student</strong> focused on incident response, vulnerability assessments, and hands-on labs.</p>
+  <p>Selected cybersecurity projects with writeups and supporting evidence (sanitized).</p>
 
-  <p>
-    Welcome to my cybersecurity portfolio. This site documents my projects, labs,
-    and learning journey across incident response, forensics, and system security.
-  </p>
+  <hr>
 
-  <p>
-    This portfolio is actively maintained and expanded as I complete new labs and projects.
-  </p>
+  <h2>1) Pi-hole Home DNS Deployment (Production Home Network)</h2>
+
+<p><strong>Goal:</strong> Reduce ad/tracker traffic and gain DNS-level visibility while maintaining network reliability for all users.</p>
+
+<p><strong>Environment:</strong> Raspberry Pi, Pi-hole, home network router (DNS forwarding), multiple client devices</p>
+
+<ul>
+  <li>
+    <strong>What I did:</strong>
+    <ul>
+      <li>Deployed Pi-hole on a Raspberry Pi to function as the primary DNS resolver for the network.</li>
+      <li>Configured curated blocklists to block tens of thousands of domains associated with advertising, telemetry, and known malicious activity.</li>
+      <li>Validated DNS resolution behavior to ensure normal browsing and streaming services were not disrupted.</li>
+      <li>Developed and used a small maintenance script to automate system updates, Pi-hole gravity updates, cache cleanup, and service restarts.</li>
+      <li>Monitored DNS query logs and rate-limiting behavior to identify noisy or misconfigured clients.</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Security & operational considerations:</strong>
+    <ul>
+      <li>Avoided overblocking by gradually tuning blocklists and using targeted whitelisting when required.</li>
+      <li>Ensured DNS availability to prevent single points of failure for the network.</li>
+      <li>Maintained separation between configuration details and public documentation to avoid exposing sensitive information.</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>What I learned:</strong>
+    <ul>
+      <li>How DNS-based filtering works and where its strengths and limitations exist.</li>
+      <li>How excessive DNS queries can indicate background services, misconfigured devices, or privacy-invasive applications.</li>
+      <li>The importance of automation and routine maintenance for security infrastructure, even in small environments.</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Evidence:</strong>
+    <ul>
+      <li>[To add] Pi-hole dashboard screenshots (queries blocked, top domains).</li>
+      <li>[To add] Example maintenance script (sanitized).</li>
+      <li>[To add] Simple network placement diagram.</li>
+    </ul>
+  </li>
+</ul>
 </body>
 </html>
