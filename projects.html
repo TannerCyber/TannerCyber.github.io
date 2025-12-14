@@ -90,5 +90,142 @@
     </ul>
   </li>
 </ul>
+
+<hr>
+
+<h2>2) Incident Response Log Analysis & IOC Extraction</h2>
+
+<p><strong>Goal:</strong> Analyze a provided JSON log file containing aggregated SIEM-style data and extract all relevant indicators of compromise (IOCs) to support incident response.</p>
+
+<p><strong>Data Source:</strong> JSON-based security and system telemetry provided for analysis.</p>
+
+<ul>
+  <li>
+    <strong>Approach:</strong>
+    <ul>
+      <li>Reviewed JSON log structure to identify relevant fields aligned with incident response requirements.</li>
+      <li>Developed a small Python script to parse and extract relevant indicators of compromise.</li>
+      <li>Focused on producing concise, actionable findings rather than exhaustive raw output.</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Indicators of Compromise (Summary):</strong>
+    <ul>
+      <li>
+  <strong>Suspicious IP Addresses:</strong>
+  <ul>
+    <li>
+  <code>10.14.22.xx</code> — Internal address observed communicating outside the expected subnet range
+  (<code>10.14.10.0/24</code>), indicating potentially abnormal internal segmentation or misuse.
+</li>
+<li>
+  <code>10.14.22.xx</code> — Second internal address with similar out-of-range behavior, suggesting
+  correlation with other anomalous internal activity.
+</li>
+    <li>
+      <code>185.217.1.93</code> — External IP associated with suspicious domain activity and correlated with
+      additional indicators within the dataset.
+    </li>
+  </ul>
+</li>
+
+      <li>
+  <strong>Suspicious Domains:</strong>
+  <ul>
+    <li>
+      <code>api-svc-metrics.net</code> — Domain name pattern mimicking legitimate telemetry services,
+      potentially used to evade casual inspection.
+    </li>
+    <li>
+      <code>update-check.microsoft-service.com</code> — Domain impersonating a trusted vendor naming
+      convention; inconsistent with legitimate Microsoft update infrastructure.
+    </li>
+    <li>
+      <code>185.217.1.93</code> — Domain resolution linked directly to a suspicious external IP address,
+      reinforcing correlation across indicators.
+    </li>
+  </ul>
+</li>
+
+      <li>
+  <strong>Suspicious Files / File Paths:</strong>
+  <ul>
+    <li>
+      <code>C:\Windows\Temp\mcache.dll</code> — DLL located in a temporary directory rather than a standard
+      system path, suggesting potential misuse or unauthorized execution context.
+    </li>
+  </ul>
+</li>
+
+      <li>
+  <strong>Suspicious Processes or Commands:</strong>
+  <ul>
+    <li>
+      <strong>Parent:</strong> <code>services.exe</code> →
+      <strong>Process:</strong> <code>powershell.exe</code>
+      — PowerShell launched from a service context, which can indicate automated execution.
+    </li>
+    <li>
+      <strong>Command:</strong> <code>powershell.exe -enc [base64-encoded payload truncated]</code>
+      — Encoded PowerShell command observed; content intentionally truncated in this public writeup.
+    </li>
+  </ul>
+</li>
+
+      <li>
+  <strong>SSL / JA3 Fingerprints:</strong>
+  <ul>
+    <li>
+      JA3 fingerprint observed on suspicious TLS traffic:
+      <code>72a589da…</code> (truncated for public reporting).
+    </li>
+  </ul>
+</li>
+
+      <li>
+  <strong>Accounts Potentially Compromised or Misused:</strong>
+  <ul>
+    <li><code>NT AUTHORITY\SYSTEM</code> — High-privilege execution context associated with PowerShell activity.</li>
+    <li><code>_svcAdmin</code> (service account) — Unsuccessful login attempts correlated with suspicious external activity (name retained as provided in dataset).</li>
+  </ul>
+</li>
+
+      <li>
+  <strong>Suspicious Ports or Protocols:</strong>
+  <ul>
+    <li>
+      <strong>Destination port:</strong> <code>4433</code> — Used across multiple connections; traffic included a JA3 fingerprint observation.
+    </li>
+    <li>
+      <strong>Source ports:</strong> <code>52912</code>, <code>52781</code>, <code>53100</code> — Ephemeral source ports associated with the same destination service.
+    </li>
+  </ul>
+</li>
+
+    </ul>
+  </li>
+
+  <p>
+  Observed high-privilege execution context (<code>NT AUTHORITY\SYSTEM</code>) launching PowerShell with an
+  encoded command, consistent with suspicious automation or scripted execution. A service-style account
+  (<code>_svcAdmin</code>) showed unsuccessful login attempts correlated with suspicious external activity
+  (<code>185.217.1.93</code>). Network indicators included repeated connections to destination port
+  <code>4433</code> from multiple ephemeral source ports and TLS fingerprinting signals (JA3 observed).
+  Recommended next steps: isolate affected host(s), review authentication logs for further misuse,
+  collect PowerShell operational logs (if available), and block/monitor the identified external indicators.
+</p>
+
+
+  <li>
+    <strong>Evidence:</strong>
+    <ul>
+      <li>[To add] Sanitized JSON excerpt</li>
+      <li>[To add] Python parsing script (sanitized)</li>
+      <li>[To add] Script output showing extracted IOCs</li>
+    </ul>
+  </li>
+</ul>
+
 </body>
 </html>
