@@ -26,7 +26,7 @@
       </nav>
     </header>
 
-    <main class="card">
+    <main class="card wide">
 
   <h1>Projects</h1>
   <p>Selected cybersecurity projects with writeups and supporting evidence (sanitized).</p>
@@ -70,14 +70,25 @@
   </li>
 
   <li>
-    <strong>Evidence:</strong>
-    <ul>
-      <li>[To add] Pi-hole dashboard screenshots (queries blocked, top domains).</li>
-      <li>[To add] Example maintenance script (sanitized).</li>
-      <li>[To add] Simple network placement diagram.</li>
-    </ul>
-  </li>
-</ul>
+  <strong>Evidence:</strong>
+
+  <div class="evidence-grid">
+    <a class="evidence-item" href="assets/pihole/pihole-dashboard.png" target="_blank" rel="noopener">
+      <img src="assets/pihole/pihole-dashboard.png" alt="Pi-hole dashboard showing queries, blocks, and activity graphs">
+      <div class="caption">Dashboard (queries, % blocked, client activity)</div>
+    </a>
+
+    <a class="evidence-item" href="assets/pihole/pihole-top-blocked-domains.png" target="_blank" rel="noopener">
+      <img src="assets/pihole/pihole-top-blocked-domains.png" alt="Pi-hole top blocked domains list">
+      <div class="caption">Top blocked domains (sample)</div>
+    </a>
+
+    <a class="evidence-item" href="assets/pihole/pihole-dns-settings.png" target="_blank" rel="noopener">
+      <img src="assets/pihole/pihole-dns-settings.png" alt="Pi-hole DNS settings showing upstream resolver selection">
+      <div class="caption">DNS settings (upstream resolver selection)</div>
+    </a>
+  </div>
+</li>
 
 <hr>
 

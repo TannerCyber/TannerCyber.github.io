@@ -146,3 +146,41 @@ nav a{
     0 18px 42px rgba(0,0,0,.35),
     0 0 0 1px rgba(0,229,255,.06);
 }
+
+/* --- Evidence gallery --- */
+.evidence-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.evidence-item{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0,0,0,.18);
+}
+
+.evidence-item img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.evidence-item .caption{
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Wider layout for long pages like Projects */
+.card.wide{
+  max-width: 110ch;
+}
+
+/* Evidence thumbnails: keep them compact */
+.evidence-item img{
+  max-height: 170px;
+  object-fit: cover;
+}
