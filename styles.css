@@ -234,3 +234,81 @@ nav a{
     grid-template-columns: 1fr;
   }
 }
+
+/* --- Contact page cards --- */
+.contact-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.contact-card{
+  display:flex;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.14);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+
+.contact-card:hover{
+  transform: translateY(-1px);
+  border-color: rgba(0,229,255,.35);
+  box-shadow: 0 0 0 3px rgba(0,229,255,.10), 0 10px 26px rgba(0,0,0,.28);
+}
+
+.contact-card .icon{
+  width: 42px;
+  height: 42px;
+  display:grid;
+  place-items:center;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.18);
+  flex: 0 0 auto;
+}
+
+.contact-card svg{
+  width: 22px;
+  height: 22px;
+  color: var(--text);
+}
+
+.contact-title{
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.contact-sub{
+  color: var(--muted);
+  font-size: .95rem;
+  margin-top: 4px;
+}
+
+.contact-card.disabled{
+  opacity: .65;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Contact icons: cyan accent */
+.contact-card .icon{
+  border-color: rgba(0,229,255,.35);
+  box-shadow: 0 0 12px rgba(0,229,255,.18);
+}
+
+.contact-card svg{
+  color: var(--accent);
+}
+
+/* Slightly stronger glow on hover */
+.contact-card:hover .icon{
+  box-shadow:
+    0 0 0 3px rgba(0,229,255,.12),
+    0 0 18px rgba(0,229,255,.28);
+}
