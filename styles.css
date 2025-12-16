@@ -184,3 +184,21 @@ nav a{
   max-height: 170px;
   object-fit: cover;
 }
+
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  align-items:start;
+}
+
+.two-col-side .sidecard{
+  margin-top: 0;
+  max-width: none;
+}
+
+@media (max-width: 900px){
+  .two-col{
+    grid-template-columns: 1fr;
+  }
+}
