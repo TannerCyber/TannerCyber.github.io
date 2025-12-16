@@ -185,6 +185,38 @@ nav a{
   object-fit: cover;
 }
 
+/* XP Cyber Range thumbnails: smaller + crop away from top banner */
+.xp-evidence .evidence-item img{
+  max-height: 140px;
+  object-position: center 65%;
+}
+
+/* XP Cyber Range: make each scenario read like a mini case-study card */
+.xp-scenarios{
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0 0;
+}
+
+.xp-scenarios > li{
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(0,0,0,.14);
+  padding: 14px 14px 12px;
+  margin: 12px 0;
+  box-shadow: 0 10px 24px rgba(0,0,0,.22);
+}
+
+.xp-scenarios > li strong{
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.xp-scenarios > li .evidence-grid{
+  margin-top: 10px;
+}
+
 .two-col{
   display:grid;
   grid-template-columns: 1fr 320px;
