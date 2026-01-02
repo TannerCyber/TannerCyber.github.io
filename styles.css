@@ -312,3 +312,62 @@ nav a{
     0 0 0 3px rgba(0,229,255,.12),
     0 0 18px rgba(0,229,255,.28);
 }
+
+/* ---------- Mobile polish ---------- */
+@media (max-width: 700px){
+  /* Stack header + make nav behave on phones */
+  header{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav{
+    flex-wrap: wrap;        /* allow wrapping on small screens */
+    white-space: normal;    /* override nowrap */
+    padding: 8px;
+    gap: 6px;
+    justify-content: flex-start;
+  }
+
+  nav a{
+    flex: 1 1 auto;         /* buttons distribute nicely */
+    text-align: center;
+    padding: 10px 10px;
+  }
+
+  /* Tighten page spacing */
+  .container{
+    padding: 20px 14px 48px;
+    width: min(1400px, 96vw);
+  }
+
+  .card{
+    padding: 16px;
+  }
+
+  /* Grids: one column feels best on phones */
+  .evidence-grid{
+    grid-template-columns: 1fr;
+  }
+
+  /* Let images breathe a bit on mobile */
+  .evidence-item img{
+    max-height: 220px;
+  }
+
+  /* Wide cards should just be full-width on mobile */
+  .card.wide{
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 420px){
+  nav a{
+    padding: 8px 10px;
+    font-size: 0.95rem;
+  }
+
+  header .muted{
+    max-width: 100%;
+  }
+}
