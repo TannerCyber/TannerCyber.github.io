@@ -14,7 +14,7 @@
       <div>
         <h1>Tanner</h1>
         <p class="muted">
-          Cybersecurity student focused on incident response, vulnerability assessments, and hands-on labs.
+          Cybersecurity student building hands-on skills across SOC analysis, incident response, offensive testing, and digital forensics.
         </p>
       </div>
 
@@ -26,84 +26,144 @@
       </nav>
     </header>
 
-  <main class="card wide">
-    <div class="two-col">
+    <main class="card wide">
+      <div class="two-col">
 
-      <section class="two-col-main">
+        <section class="two-col-main">
+          <h1>Labs</h1>
+          <p>
+            Hands-on exercises focused on repeatable workflows, investigation, and skill development.
+            These are lab-style activities (not full project ownership), documented for portfolio evidence.
+          </p>
 
- <h1>Labs</h1>
-  <p>
-  Hands-on labs and exercises focused on blue-team analysis, threat hunting,
-  and digital forensics. These labs emphasize skill development and investigative thinking
-  rather than full project ownership.
+          <hr>
+
+          <h2>SOC & Incident Response Labs</h2>
+          <p class="muted">
+  Deeper write-ups and evidence-based deliverables are documented on the <a href="projects.html">Projects</a> page.
 </p>
 
-  <hr>
+          <h3>Incident Response Workflow Lab (detect → triage → contain → document)</h3>
+          <ul>
+            <li>Practiced IR flow: initial detection signals, scope/impact assessment, containment actions, and recovery planning.</li>
+            <li>Documented findings in a clear analyst style: indicators, affected hosts/users, timeline, and recommended next steps.</li>
+            <li>Focused on “tell the story with evidence” — what happened, why it matters, and what to do now.</li>
+          </ul>
 
-  <h2>Blue Team / SOC Labs</h2>
-  <ul>
-    <li>TryHackMe — SOC and Blue Team–focused rooms (log analysis, detection, alert triage)</li>
-    <li>Windows event log analysis to identify abnormal user behavior and suspicious activity</li>
-    <li>IOC identification from structured log datasets</li>
-  </ul>
+          <h3>Windows Log Hunting Lab (Event Viewer)</h3>
+          <ul>
+            <li>Reviewed Windows Security logs to identify abnormal authentication activity and suspicious user behavior.</li>
+            <li>Mapped findings to common attacker behaviors (failed logon bursts, privilege changes, unusual logon types).</li>
+            <li>Practiced concise reporting suitable for SOC escalation or ticket notes.</li>
+          </ul>
 
-  <h2>Network & Traffic Analysis Labs</h2>
-  <ul>
-    <li>Wireshark PCAP analysis to identify open ports, services, and suspicious traffic patterns</li>
-    <li>Protocol analysis (TCP, UDP, DNS, HTTP/HTTPS)</li>
-    <li>Conversation and statistics views to establish traffic baselines</li>
-  </ul>
+          <h3>IOC Identification Lab (structured logs / datasets)</h3>
+          <ul>
+            <li>Extracted and validated indicators (domains, IPs, hashes) and correlated related events.</li>
+            <li>Built a short incident narrative supported by evidence (what/when/how often).</li>
+            <li>Recommended actions: block/monitor, detection tuning, and follow-on investigation pivots.</li>
+          </ul>
 
-  <h2>Digital Forensics Labs</h2>
-  <ul>
-    <li>File system analysis (NTFS, exFAT)</li>
-    <li>$MFT record parsing and metadata interpretation</li>
-    <li>Artifact examination using FTK Imager and hex editors</li>
-    <li>Timeline reconstruction and evidence interpretation</li>
-  </ul>
+          <h3>TryHackMe — SOC / Blue Team Rooms</h3>
+          <ul>
+            <li>Completed SOC-focused labs reinforcing alert triage, investigation thinking, and fundamentals.</li>
+            <li>Strengthened analyst habits: verifying assumptions, documenting evidence, and communicating clearly.</li>
+          </ul>
 
-  <hr>
+          <hr>
 
-<h2>XP Cyber Range (NIST-aligned scenarios)</h2>
-<ul class="xp-scenarios">
-  <li>
-    <strong>Cyber De-energizer: Advanced Threat Malware</strong> — Incident response in an ICS-style scenario (malware quarantine + restore operations).
-    <div class="evidence-grid xp-evidence">
-      <a class="evidence-item" href="assets/xp-cyber-range/xp-advanced-threat-malware.png" target="_blank" rel="noopener">
-        <img src="assets/xp-cyber-range/xp-advanced-threat-malware.png" alt="XP Cyber Range report screenshot showing completion for Advanced Threat Malware challenge">
-        <div class="caption">Completion report (redacted identifiers)</div>
-      </a>
-    </div>
-  </li>
+          <h2>Network & Security Testing Labs</h2>
 
-  <li>
-    <strong>Preventative Protection: Thwarting the Imminent Threat (NG)</strong> — Applied preventative controls to harden a system and stop an imminent attack.
-    <div class="evidence-grid xp-evidence">
-      <a class="evidence-item" href="assets/xp-cyber-range/xp-preventative-protection.png" target="_blank" rel="noopener">
-        <img src="assets/xp-cyber-range/xp-preventative-protection.png" alt="XP Cyber Range report screenshot showing completion for Preventative Protection challenge">
-        <div class="caption">Completion report (redacted identifiers)</div>
-      </a>
-    </div>
-  </li>
-</ul>
+          <h3>Network Traffic Analysis Lab (PCAP triage)</h3>
+          <ul>
+            <li>Wireshark PCAP analysis to identify ports/services, suspicious patterns, and potential beaconing behavior.</li>
+            <li>Protocol review (TCP, UDP, DNS, HTTP/HTTPS) and stream reconstruction where applicable.</li>
+            <li>Conversation/statistics views to establish baselines and spot anomalies quickly.</li>
+          </ul>
 
-      </section>
+          <h3>Wireless Security Lab (WPA2 — owned network)</h3>
+          <ul>
+            <li>Captured a WPA2 handshake in a controlled environment to validate Wi-Fi credential strength.</li>
+            <li>Performed an offline password audit using Kali Linux tooling and GPU-accelerated cracking with Hashcat.</li>
+            <li>Documented security takeaways and recommended mitigations such as stronger passphrases and modern Wi-Fi standards (WPA3), based on observed weaknesses.</li>
+          </ul>
 
-      <aside class="two-col-side">
-  <div class="card sidecard">
-    <h3>Quick Lab Index</h3>
-    <ul>
-      <li>TryHackMe — SOC / Blue Team</li>
-      <li>Windows event log analysis</li>
-      <li>Wireshark PCAP analysis</li>
-      <li>Digital forensics (NTFS, exFAT)</li>
-      <li>XP Cyber Range (NIST-aligned)</li>
-      <li>NCL</li>
-      <li>MetaCTF</li>
-    </ul>
-  </div>
-</aside>
-</div>
+          <h3>Recon & Vulnerability Scanning Lab (owned network)</h3>
+          <ul>
+            <li>Nmap discovery + service enumeration to validate exposed services and reduce unknowns.</li>
+            <li>Nessus Essentials scanning for common misconfigurations and patch gaps (lab scope).</li>
+            <li>Converted findings into prioritized remediation notes (risk, impact, and quick fixes).</li>
+          </ul>
+
+          <hr>
+
+          <h2>Digital Forensics Labs</h2>
+
+          <h3>File System Forensics Lab (NTFS / exFAT)</h3>
+          <ul>
+            <li>File system and artifact analysis using FTK Imager and hex editors.</li>
+            <li>$MFT / metadata interpretation (timestamps, attributes, allocation status) and timeline reconstruction.</li>
+            <li>Evidence handling habits: integrity-minded documentation and repeatable steps.</li>
+          </ul>
+
+          <hr>
+
+          <h2>Cyber Range & Competitive Labs</h2>
+          <p class="muted">
+            Scenario-based challenges and CTF-style environments used to practice investigation, response, and technical problem solving.
+          </p>
+
+          <h3>XP Cyber Range (NIST-aligned scenarios)</h3>
+          <ul class="xp-scenarios">
+            <li>
+              <strong>Cyber De-energizer: Advanced Threat Malware</strong> — Incident response in an ICS-style scenario (malware quarantine + restore operations).
+              <div class="evidence-grid xp-evidence">
+                <a class="evidence-item" href="assets/xp-cyber-range/xp-advanced-threat-malware.png" target="_blank" rel="noopener">
+                  <img src="assets/xp-cyber-range/xp-advanced-threat-malware.png" alt="XP Cyber Range report screenshot showing completion for Advanced Threat Malware challenge">
+                  <div class="caption">Completion report (redacted identifiers)</div>
+                </a>
+              </div>
+            </li>
+
+            <li>
+              <strong>Preventative Protection: Thwarting the Imminent Threat (NG)</strong> — Applied preventative controls to harden a system and stop an imminent attack.
+              <div class="evidence-grid xp-evidence">
+                <a class="evidence-item" href="assets/xp-cyber-range/xp-preventative-protection.png" target="_blank" rel="noopener">
+                  <img src="assets/xp-cyber-range/xp-preventative-protection.png" alt="XP Cyber Range report screenshot showing completion for Preventative Protection challenge">
+                  <div class="caption">Completion report (redacted identifiers)</div>
+                </a>
+              </div>
+            </li>
+          </ul>
+
+          <h3>CTFs / Competitions</h3>
+          <ul>
+            <li><strong>National Cyber League (NCL)</strong> — timed challenges across OSINT, scanning, password auditing, and investigation tasks.</li>
+            <li><strong>MetaCTF</strong> — mixed-difficulty challenges focused on problem solving and fundamentals.</li>
+          </ul>
+
+        </section>
+
+        <aside class="two-col-side">
+          <div class="card sidecard">
+            <h3>Quick Lab Index</h3>
+            <ul>
+              <li>SOC / Incident Response workflow</li>
+              <li>Windows event log hunting</li>
+              <li>IOC identification</li>
+              <li>TryHackMe (SOC / Blue Team)</li>
+              <li>PCAP triage (Wireshark)</li>
+              <li>Wireless security (WPA2 audit)</li>
+              <li>Recon & vulnerability scanning</li>
+              <li>Digital forensics (NTFS, exFAT)</li>
+              <li>XP Cyber Range (NIST-aligned)</li>
+              <li>NCL</li>
+              <li>MetaCTF</li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
     </main>
 
   </div>
