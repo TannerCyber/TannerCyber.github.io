@@ -1,232 +1,189 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tanner | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | TannerCyber</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <div class="container">
-
-    <header>
-      <div>
-        <h1>Tanner</h1>
-        <p class="muted">
-          Cybersecurity student focused on incident response, vulnerability assessments, and hands-on labs.
-        </p>
-      </div>
-
+  <header>
+    <div class="nav-container">
+      <div class="logo">TannerCyber</div>
       <nav>
         <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
+        <a href="projects.html" class="active">Projects</a>
         <a href="labs.html">Labs</a>
         <a href="contact.html">Contact</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main class="card wide">
+  <main class="card wide">
+    <h1>Projects</h1>
+    <p>Selected cybersecurity projects with writeups and supporting evidence (sanitized).</p>
 
-  <h1>Projects</h1>
-  <p>Selected cybersecurity projects with writeups and supporting evidence (sanitized).</p>
+    <hr>
 
-  <hr>
+    <!-- Project 1 -->
+    <details class="project">
+      <summary>
+        <span class="project-title">1) Pi-hole Home DNS Deployment (Production Home Network)</span>
+        <span class="project-meta muted">Raspberry Pi • DNS filtering • Automation</span>
+      </summary>
 
-  <h2>1) Pi-hole Home DNS Deployment (Production Home Network)</h2>
+      <div class="project-body">
+        <p><strong>Goal:</strong> Reduce ad/tracker traffic and gain DNS-level visibility while maintaining network reliability for all users.</p>
 
-<p><strong>Goal:</strong> Reduce ad/tracker traffic and gain DNS-level visibility while maintaining network reliability for all users.</p>
+        <p><strong>Environment:</strong> Raspberry Pi, Pi-hole, home network router (DNS forwarding), multiple client devices</p>
 
-<p><strong>Environment:</strong> Raspberry Pi, Pi-hole, home network router (DNS forwarding), multiple client devices</p>
+        <ul>
+          <li>
+            <strong>What I did:</strong>
+            <ul>
+              <li>Deployed Pi-hole on a Raspberry Pi to function as the primary DNS resolver for the network.</li>
+              <li>Configured curated blocklists to block tens of thousands of domains associated with advertising, telemetry, and known malicious activity.</li>
+              <li>Validated DNS resolution behavior to ensure normal browsing and streaming services were not disrupted.</li>
+              <li>Developed and used a small maintenance script to automate system updates, Pi-hole gravity updates, cache cleanup, and service restarts.</li>
+              <li>Monitored DNS query logs and rate-limiting behavior to identify noisy or misconfigured clients.</li>
+            </ul>
+          </li>
 
-<ul>
-  <li>
-    <strong>What I did:</strong>
-    <ul>
-      <li>Deployed Pi-hole on a Raspberry Pi to function as the primary DNS resolver for the network.</li>
-      <li>Configured curated blocklists to block tens of thousands of domains associated with advertising, telemetry, and known malicious activity.</li>
-      <li>Validated DNS resolution behavior to ensure normal browsing and streaming services were not disrupted.</li>
-      <li>Developed and used a small maintenance script to automate system updates, Pi-hole gravity updates, cache cleanup, and service restarts.</li>
-      <li>Monitored DNS query logs and rate-limiting behavior to identify noisy or misconfigured clients.</li>
-    </ul>
-  </li>
+          <li>
+            <strong>Security &amp; operational considerations:</strong>
+            <ul>
+              <li>Avoided overblocking by gradually tuning blocklists and using targeted whitelisting when required.</li>
+              <li>Ensured DNS availability to prevent single points of failure for the network.</li>
+              <li>Maintained separation between configuration details and public documentation to avoid exposing sensitive information.</li>
+            </ul>
+          </li>
 
-  <li>
-    <strong>Security & operational considerations:</strong>
-    <ul>
-      <li>Avoided overblocking by gradually tuning blocklists and using targeted whitelisting when required.</li>
-      <li>Ensured DNS availability to prevent single points of failure for the network.</li>
-      <li>Maintained separation between configuration details and public documentation to avoid exposing sensitive information.</li>
-    </ul>
-  </li>
+          <li>
+            <strong>What I learned:</strong>
+            <ul>
+              <li>How DNS-based filtering works and where its strengths and limitations exist.</li>
+              <li>How excessive DNS queries can indicate background services, misconfigured devices, or privacy-invasive applications.</li>
+              <li>The importance of automation and routine maintenance for security infrastructure, even in small environments.</li>
+            </ul>
+          </li>
+        </ul>
 
-  <li>
-    <strong>What I learned:</strong>
-    <ul>
-      <li>How DNS-based filtering works and where its strengths and limitations exist.</li>
-      <li>How excessive DNS queries can indicate background services, misconfigured devices, or privacy-invasive applications.</li>
-      <li>The importance of automation and routine maintenance for security infrastructure, even in small environments.</li>
-    </ul>
-  </li>
+        <p><strong>Evidence:</strong></p>
 
-  <li>
-  <strong>Evidence:</strong>
+        <div class="evidence-grid">
+          <a class="evidence-item" href="assets/pihole/pihole-dashboard.png" target="_blank" rel="noopener">
+            <img src="assets/pihole/pihole-dashboard.png" alt="Pi-hole dashboard showing queries, blocks, and activity graphs" />
+            <div class="caption">Dashboard (queries, % blocked, client activity)</div>
+          </a>
 
-  <div class="evidence-grid">
-    <a class="evidence-item" href="assets/pihole/pihole-dashboard.png" target="_blank" rel="noopener">
-      <img src="assets/pihole/pihole-dashboard.png" alt="Pi-hole dashboard showing queries, blocks, and activity graphs">
-      <div class="caption">Dashboard (queries, % blocked, client activity)</div>
-    </a>
+          <a class="evidence-item" href="assets/pihole/pihole-top-blocked-domains.png" target="_blank" rel="noopener">
+            <img src="assets/pihole/pihole-top-blocked-domains.png" alt="Pi-hole top blocked domains list" />
+            <div class="caption">Top blocked domains (sample)</div>
+          </a>
 
-    <a class="evidence-item" href="assets/pihole/pihole-top-blocked-domains.png" target="_blank" rel="noopener">
-      <img src="assets/pihole/pihole-top-blocked-domains.png" alt="Pi-hole top blocked domains list">
-      <div class="caption">Top blocked domains (sample)</div>
-    </a>
+          <a class="evidence-item" href="assets/pihole/pihole-dns-settings.png" target="_blank" rel="noopener">
+            <img src="assets/pihole/pihole-dns-settings.png" alt="Pi-hole DNS settings showing upstream resolver selection" />
+            <div class="caption">DNS settings (upstream resolver selection)</div>
+          </a>
+        </div>
+      </div>
+    </details>
 
-    <a class="evidence-item" href="assets/pihole/pihole-dns-settings.png" target="_blank" rel="noopener">
-      <img src="assets/pihole/pihole-dns-settings.png" alt="Pi-hole DNS settings showing upstream resolver selection">
-      <div class="caption">DNS settings (upstream resolver selection)</div>
-    </a>
-  </div>
-</li>
+    <!-- Project 2 -->
+    <details class="project">
+      <summary>
+        <span class="project-title">2) Incident Response Log Analysis &amp; IOC Extraction</span>
+        <span class="project-meta muted">SIEM logs • Python parsing • IOC extraction</span>
+      </summary>
 
-<hr>
+      <div class="project-body">
+        <p><strong>Goal:</strong> Analyze a provided JSON log file containing aggregated SIEM-style data and extract relevant indicators of compromise (IOCs) to support incident response.</p>
 
-<h2>2) Incident Response Log Analysis & IOC Extraction</h2>
+        <p><strong>Data Source:</strong> JSON-based security and system telemetry provided for analysis.</p>
 
-<p><strong>Goal:</strong> Analyze a provided JSON log file containing aggregated SIEM-style data and extract all relevant indicators of compromise (IOCs) to support incident response.</p>
+        <h3>Approach</h3>
+        <ul>
+          <li>Reviewed JSON log structure to identify relevant fields aligned with incident response requirements.</li>
+          <li>Developed a small Python script to parse and extract relevant indicators of compromise.</li>
+          <li>Focused on producing concise, actionable findings rather than exhaustive raw output.</li>
+        </ul>
 
-<p><strong>Data Source:</strong> JSON-based security and system telemetry provided for analysis.</p>
+        <h3>Indicators of Compromise (Summary)</h3>
+        <ul>
+          <li>
+            <strong>Suspicious IP Addresses:</strong>
+            <ul>
+              <li><code>10.14.22.xx</code> — Internal address observed communicating outside the expected subnet range (<code>10.14.10.0/24</code>).</li>
+              <li><code>185.217.1.93</code> — External IP correlated with suspicious domain activity within the dataset.</li>
+            </ul>
+          </li>
 
-<ul>
-  <li>
-    <strong>Approach:</strong>
-    <ul>
-      <li>Reviewed JSON log structure to identify relevant fields aligned with incident response requirements.</li>
-      <li>Developed a small Python script to parse and extract relevant indicators of compromise.</li>
-      <li>Focused on producing concise, actionable findings rather than exhaustive raw output.</li>
-    </ul>
-  </li>
+          <li>
+            <strong>Suspicious Domains:</strong>
+            <ul>
+              <li><code>api-svc-metrics.net</code> — Domain pattern mimicking legitimate telemetry services.</li>
+              <li><code>update-check.microsoft-service.com</code> — Domain impersonating a trusted vendor naming convention.</li>
+            </ul>
+          </li>
 
-  <li>
-    <strong>Indicators of Compromise (Summary):</strong>
-    <ul>
-      <li>
-  <strong>Suspicious IP Addresses:</strong>
-  <ul>
-    <li>
-  <code>10.14.22.xx</code> — Internal address observed communicating outside the expected subnet range
-  (<code>10.14.10.0/24</code>), indicating potentially abnormal internal segmentation or misuse.
-</li>
-<li>
-  <code>10.14.22.xx</code> — Second internal address with similar out-of-range behavior, suggesting
-  correlation with other anomalous internal activity.
-</li>
-    <li>
-      <code>185.217.1.93</code> — External IP associated with suspicious domain activity and correlated with
-      additional indicators within the dataset.
-    </li>
-  </ul>
-</li>
+          <li>
+            <strong>Suspicious Files / File Paths:</strong>
+            <ul>
+              <li><code>C:\Windows\Temp\mcache.dll</code> — DLL located in a temporary directory rather than a standard system path.</li>
+            </ul>
+          </li>
 
-      <li>
-  <strong>Suspicious Domains:</strong>
-  <ul>
-    <li>
-      <code>api-svc-metrics.net</code> — Domain name pattern mimicking legitimate telemetry services,
-      potentially used to evade casual inspection.
-    </li>
-    <li>
-      <code>update-check.microsoft-service.com</code> — Domain impersonating a trusted vendor naming
-      convention; inconsistent with legitimate Microsoft update infrastructure.
-    </li>
-    <li>
-      <code>185.217.1.93</code> — Domain resolution linked directly to a suspicious external IP address,
-      reinforcing correlation across indicators.
-    </li>
-  </ul>
-</li>
+          <li>
+            <strong>Suspicious Processes or Commands:</strong>
+            <ul>
+              <li><strong>Parent:</strong> <code>services.exe</code> → <strong>Process:</strong> <code>powershell.exe</code> — PowerShell launched from a service context.</li>
+              <li><strong>Command:</strong> <code>powershell.exe -enc [base64-encoded payload truncated]</code> — Encoded PowerShell command observed (truncated for public reporting).</li>
+            </ul>
+          </li>
 
-      <li>
-  <strong>Suspicious Files / File Paths:</strong>
-  <ul>
-    <li>
-      <code>C:\Windows\Temp\mcache.dll</code> — DLL located in a temporary directory rather than a standard
-      system path, suggesting potential misuse or unauthorized execution context.
-    </li>
-  </ul>
-</li>
+          <li>
+            <strong>SSL / JA3 Fingerprints:</strong>
+            <ul>
+              <li>JA3 fingerprint observed on suspicious TLS traffic: <code>72a589da…</code> (truncated).</li>
+            </ul>
+          </li>
 
-      <li>
-  <strong>Suspicious Processes or Commands:</strong>
-  <ul>
-    <li>
-      <strong>Parent:</strong> <code>services.exe</code> →
-      <strong>Process:</strong> <code>powershell.exe</code>
-      — PowerShell launched from a service context, which can indicate automated execution.
-    </li>
-    <li>
-      <strong>Command:</strong> <code>powershell.exe -enc [base64-encoded payload truncated]</code>
-      — Encoded PowerShell command observed; content intentionally truncated in this public writeup.
-    </li>
-  </ul>
-</li>
+          <li>
+            <strong>Accounts Potentially Compromised or Misused:</strong>
+            <ul>
+              <li><code>NT AUTHORITY\\SYSTEM</code> — High-privilege execution context associated with PowerShell activity.</li>
+              <li><code>_svcAdmin</code> — Unsuccessful login attempts correlated with suspicious external activity (name retained as provided in dataset).</li>
+            </ul>
+          </li>
 
-      <li>
-  <strong>SSL / JA3 Fingerprints:</strong>
-  <ul>
-    <li>
-      JA3 fingerprint observed on suspicious TLS traffic:
-      <code>72a589da…</code> (truncated for public reporting).
-    </li>
-  </ul>
-</li>
+          <li>
+            <strong>Suspicious Ports or Protocols:</strong>
+            <ul>
+              <li><strong>Destination port:</strong> <code>4433</code> — Observed across multiple connections.</li>
+            </ul>
+          </li>
+        </ul>
 
-      <li>
-  <strong>Accounts Potentially Compromised or Misused:</strong>
-  <ul>
-    <li><code>NT AUTHORITY\SYSTEM</code> — High-privilege execution context associated with PowerShell activity.</li>
-    <li><code>_svcAdmin</code> (service account) — Unsuccessful login attempts correlated with suspicious external activity (name retained as provided in dataset).</li>
-  </ul>
-</li>
+        <h3>Notes &amp; Next Steps</h3>
+        <p>
+          Observed high-privilege execution context (<code>NT AUTHORITY\\SYSTEM</code>) launching PowerShell with an encoded command, consistent with suspicious automation.
+          A service-style account (<code>_svcAdmin</code>) showed unsuccessful login attempts correlated with suspicious external activity (<code>185.217.1.93</code>).
+          Recommended next steps: isolate affected host(s), review authentication logs for further misuse, collect PowerShell operational logs (if available), and block/monitor the identified external indicators.
+        </p>
 
-      <li>
-  <strong>Suspicious Ports or Protocols:</strong>
-  <ul>
-    <li>
-      <strong>Destination port:</strong> <code>4433</code> — Used across multiple connections; traffic included a JA3 fingerprint observation.
-    </li>
-    <li>
-      <strong>Source ports:</strong> <code>52912</code>, <code>52781</code>, <code>53100</code> — Ephemeral source ports associated with the same destination service.
-    </li>
-  </ul>
-</li>
+        <h3>Evidence</h3>
+        <ul>
+          <li>[To add] Sanitized JSON excerpt</li>
+          <li>[To add] Python parsing script (sanitized)</li>
+          <li>[To add] Script output showing extracted IOCs</li>
+        </ul>
+      </div>
+    </details>
 
-    </ul>
-  </li>
+  </main>
 
-  <p>
-  Observed high-privilege execution context (<code>NT AUTHORITY\SYSTEM</code>) launching PowerShell with an
-  encoded command, consistent with suspicious automation or scripted execution. A service-style account
-  (<code>_svcAdmin</code>) showed unsuccessful login attempts correlated with suspicious external activity
-  (<code>185.217.1.93</code>). Network indicators included repeated connections to destination port
-  <code>4433</code> from multiple ephemeral source ports and TLS fingerprinting signals (JA3 observed).
-  Recommended next steps: isolate affected host(s), review authentication logs for further misuse,
-  collect PowerShell operational logs (if available), and block/monitor the identified external indicators.
-</p>
-
-
-  <li>
-    <strong>Evidence:</strong>
-    <ul>
-      <li>[To add] Sanitized JSON excerpt</li>
-      <li>[To add] Python parsing script (sanitized)</li>
-      <li>[To add] Script output showing extracted IOCs</li>
-    </ul>
-  </li>
-</ul>
-    </main>
-
-  </div>
+  <footer>
+    <p>© 2026 TannerCyber. Built for learning and portfolio demonstration.</p>
+  </footer>
 </body>
 </html>
