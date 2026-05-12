@@ -514,8 +514,56 @@ footer {
   color: var(--muted);
 }
 
+/* --- Home page tools section --- */
+.tools-section h2 {
+  margin-bottom: 8px;
+}
+
+.section-intro {
+  margin-top: 0;
+  margin-bottom: 14px;
+  color: var(--muted);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.tool-card {
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+.tool-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.tool-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tool-tags span {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(0, 229, 255, 0.07);
+  border: 1px solid rgba(0, 229, 255, 0.14);
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
 @media (max-width: 760px) {
-  .focus-grid {
+  .focus-grid,
+  .tools-grid {
     grid-template-columns: 1fr;
   }
 }

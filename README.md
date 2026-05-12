@@ -67,34 +67,63 @@ All public material is **sanitized** to avoid exposing sensitive data while stil
 
 ## 🛠️ Tools & Technologies
 
+**Security Operations & Logs**
+- Windows Event Viewer
+- Microsoft Defender
+- SIEM lab workflows
+- JSON log analysis
+
 **Network & Traffic**
 - Wireshark
 - Nmap
 - tcpdump
-- Zeek / RITA (introductory exposure)
+- Zeek
+- RITA
+- DNS analysis
 
-**Cloud & Identity**
-- Microsoft Azure
-- Azure Active Directory
-- Azure Network Security Groups (NSGs)
-- Azure networking and access control configuration
-- Backup and disaster recovery concepts (replication and recovery planning)
-
-**Security Platforms**
-- Pi-hole (DNS-based filtering and monitoring)
-- Microsoft Defender (endpoint security and alerting)
-- SIEM platforms (lab-based exposure to alert triage and log analysis)
-- Intrusion detection and network monitoring platforms (introductory exposure)
-
-**Scripting & Automation**
-- Bash / shell scripting
-- Python (basic scripting)
+**Offensive Security Labs**
+- Kali Linux
+- Metasploit
+- msfconsole
+- msfvenom
+- Aircrack-ng suite
+- Hashcat
+- SSH tunneling
 
 **Digital Forensics**
 - FTK Imager
-- HxD (hex-level disk and file analysis)
-- Disk image acquisition and examination
-- NTFS and FAT file system analysis
+- Magnet AXIOM
+- PALADIN
+- HxD
+- Autopsy
+- Registry Explorer
+- NTFS / FAT analysis
+- Hash identification
+- Evidence hash verification
+
+**Cloud & Identity**
+- Microsoft Azure
+- Azure AD / Entra ID
+- Azure networking
+- Network Security Groups
+- Backup and disaster recovery concepts
+
+**Systems & Virtualization**
+- Windows Server
+- Active Directory
+- Linux
+- Pi-hole
+- VMware Workstation
+- Docker
+- Raspberry Pi
+
+**Scripting & Development**
+- Python
+- Bash
+- PowerShell
+- Git / GitHub
+- VS Code
+- HTML / CSS
 
 ---
 
@@ -155,14 +184,21 @@ https://tannercyber.github.io/labs.html
 
 ---
 
-## 🎓 Certifications & Training
+## 🎓 Certifications & Relevant Coursework
 
+**Certifications**
 - CompTIA IT Fundamentals (ITF+)
 - Microsoft Azure Fundamentals (AZ-900)
-- Server Administration coursework
-- Cybersecurity & Incident Response coursework
-- Digital Forensics coursework
-- Continuous self-study & labs
+
+**Relevant College Coursework & Hands-On Training**
+- Ethical Hacking coursework involving enumeration, exploitation workflows, Metasploit, tunneling, and payload generation
+- Cybersecurity Analyst coursework aligned with CySA+ concepts, including blue-team operations, alert triage, log analysis, and incident response
+- Digital Forensics Analysis coursework involving disk imaging, file system analysis, artifact review, and forensic documentation
+- Server Administration coursework covering Windows Server, Active Directory, system administration, and infrastructure fundamentals
+- Linux Administration coursework covering command-line usage, users, permissions, services, and system management
+- Cloud Essentials coursework covering cloud service models, Azure fundamentals, networking, identity, and security concepts
+- SQL Database Concepts coursework covering database design, SQL queries, joins, and relational database fundamentals
+- CTF and cyber range participation including NCL, MetaCTF, XP Cyber Range, and TryHackMe labs
 
 ---
 
