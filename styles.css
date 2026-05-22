@@ -345,6 +345,39 @@ code {
   max-width: 840px;
 }
 
+.xp-challenge-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.xp-challenge {
+  margin: 12px 0;
+}
+
+.xp-report-link {
+  display: block;
+  margin-top: 12px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.xp-report-link:hover {
+  border-color: rgba(0, 229, 255, 0.35);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.08);
+}
+
+.xp-report-link img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #ffffff;
+}
+
 /* --- Contact page --- */
 .contact-grid {
   display: grid;

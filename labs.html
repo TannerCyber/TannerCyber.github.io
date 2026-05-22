@@ -104,33 +104,208 @@
 
           <hr>
 
-          <h2>Cyber Range & Competitive Labs</h2>
+          <h2>Cyber Range & CISA Threat Sandbox Challenges</h2>
           <p class="muted">
             Scenario-based challenges and CTF-style environments used to practice investigation, response, and technical problem solving.
           </p>
 
           <h3>XP Cyber Range (NIST-aligned scenarios)</h3>
-          <ul class="xp-scenarios">
-            <li>
-              <strong>Cyber De-energizer: Advanced Threat Malware</strong> — Incident response in an ICS-style scenario (malware quarantine + restore operations).
-              <div class="evidence-grid xp-evidence">
-                <a class="evidence-item" href="assets/xp-cyber-range/xp-advanced-threat-malware.png" target="_blank" rel="noopener">
+
+          <p class="muted">
+            These challenges are summarized to demonstrate technical understanding without publishing step-by-step exploitation details. 
+            Digital copies of my professional documentation are maintained separately, including penetration test-style reports for the CISA Threat Sandbox challenges, 
+            and can be discussed or reviewed in an interview setting.
+          </p>
+
+          <div class="xp-challenge-list">
+
+            <details class="project xp-challenge">
+              <summary>
+                <span class="project-title">Cyber De-energizer: Advanced Threat Malware</span>
+                <span class="project-meta muted">Incident response • ICS-style scenario</span>
+              </summary>
+
+              <div class="project-body">
+                <p>
+                  <strong>Challenge Summary:</strong>
+                  This scenario focused on responding to a malware-related incident in an ICS-style environment where availability and operational recovery were key concerns.
+                  The challenge required understanding the impact of malicious activity, making containment decisions, and validating that affected operations were restored safely.
+                </p>
+
+                <p>
+                  <strong>Skills Applied:</strong>
+                </p>
+                <ul>
+                  <li>Practiced incident response thinking in an operational technology-style environment.</li>
+                  <li>Balanced containment actions with the need to restore normal system operations.</li>
+                  <li>Validated recovery by confirming the malicious activity was addressed and the affected operation returned to a normal state.</li>
+                  <li>Documented the outcome in a way that explains the security issue, response actions, and final validation without exposing sensitive procedural details.</li>
+                </ul>
+
+                <p>
+                  <strong>Documentation:</strong>
+                  A digital copy of the completion report and supporting notes is maintained separately. Public evidence is limited to a redacted completion screenshot to avoid exposing unnecessary lab details.
+                </p>
+
+                <p><strong>Evidence:</strong></p>
+                <a class="xp-report-link" href="assets/xp-cyber-range/xp-advanced-threat-malware.png" target="_blank" rel="noopener">
                   <img src="assets/xp-cyber-range/xp-advanced-threat-malware.png" alt="XP Cyber Range report screenshot showing completion for Advanced Threat Malware challenge">
                   <div class="caption">Completion report (redacted identifiers)</div>
                 </a>
               </div>
-            </li>
+            </details>
 
-            <li>
-              <strong>Preventative Protection: Thwarting the Imminent Threat (NG)</strong> — Applied preventative controls to harden a system and stop an imminent attack.
-              <div class="evidence-grid xp-evidence">
-                <a class="evidence-item" href="assets/xp-cyber-range/xp-preventative-protection.png" target="_blank" rel="noopener">
+            <details class="project xp-challenge">
+              <summary>
+                <span class="project-title">Preventative Protection: Thwarting the Imminent Threat (NG)</span>
+                <span class="project-meta muted">Hardening • Preventative controls</span>
+              </summary>
+
+              <div class="project-body">
+                <p>
+                  <strong>Challenge Summary:</strong>
+                  This scenario focused on preventing an imminent security threat by applying defensive controls before the attack could succeed.
+                  The challenge reinforced the importance of hardening systems proactively, validating security settings, and reducing exposure before an incident becomes active.
+                </p>
+
+                <p>
+                  <strong>Skills Applied:</strong>
+                </p>
+                <ul>
+                  <li>Applied preventative security controls to reduce the system’s attack surface.</li>
+                  <li>Practiced defensive decision-making focused on stopping an attack before impact.</li>
+                  <li>Validated that the applied controls addressed the threat condition and improved the system’s security posture.</li>
+                  <li>Connected technical hardening actions to real-world risk reduction and operational protection.</li>
+                </ul>
+
+                <p>
+                  <strong>Documentation:</strong>
+                  A digital copy of the completion report and supporting notes is maintained separately. Public evidence is limited to a redacted completion screenshot to avoid exposing unnecessary lab details.
+                </p>
+
+                <p><strong>Evidence:</strong></p>
+                <a class="xp-report-link" href="assets/xp-cyber-range/xp-preventative-protection.png" target="_blank" rel="noopener">
                   <img src="assets/xp-cyber-range/xp-preventative-protection.png" alt="XP Cyber Range report screenshot showing completion for Preventative Protection challenge">
                   <div class="caption">Completion report (redacted identifiers)</div>
                 </a>
               </div>
-            </li>
-          </ul>
+            </details>
+
+            <details class="project xp-challenge">
+              <summary>
+                <span class="project-title">CISA Threat Sandbox: Apache Proxy4All</span>
+                <span class="project-meta muted">SSRF • Apache • Remediation</span>
+              </summary>
+
+              <div class="project-body">
+                <p>
+                  <strong>Challenge Summary:</strong>
+                  This CISA Threat Sandbox scenario focused on understanding and responding to an Apache-related server-side request forgery vulnerability.
+                  I researched how the vulnerability could allow unintended internal requests, validated the issue in a controlled lab environment, and confirmed that remediation reduced the exposure.
+                </p>
+
+                <p>
+                  <strong>Skills Applied:</strong>
+                </p>
+                <ul>
+                  <li>Researched the vulnerability behavior, affected service, and security impact before testing.</li>
+                  <li>Validated the issue in a controlled environment without publishing step-by-step exploitation details.</li>
+                  <li>Used service/version awareness to understand whether the system was exposed or remediated.</li>
+                  <li>Connected the technical finding to real-world risk, including internal service exposure and unauthorized request paths.</li>
+                  <li>Documented the assessment in a penetration test-style format with scope, objectives, findings, impact, and remediation guidance.</li>
+                </ul>
+
+                <p>
+                  <strong>Documentation:</strong>
+                  A digital copy of my penetration test-style documentation for this challenge is maintained separately.
+                  The public portfolio includes only a high-level summary and redacted completion evidence to avoid exposing unnecessary technical details.
+                </p>
+
+                <p><strong>Evidence:</strong></p>
+                <a class="xp-report-link" href="assets/xp-cyber-range/xp-apache-proxy4all.png" target="_blank" rel="noopener">
+                  <img src="assets/xp-cyber-range/xp-apache-proxy4all.png" alt="XP Cyber Range report screenshot showing completion for Apache Proxy4All challenge">
+                  <div class="caption">Completion report (redacted identifiers)</div>
+                </a>
+              </div>
+            </details>
+
+            <details class="project xp-challenge">
+              <summary>
+                <span class="project-title">System Administration: Security by Design</span>
+                <span class="project-meta muted">Secure design • Risk reduction</span>
+              </summary>
+
+              <div class="project-body">
+                <p>
+                  <strong>Challenge Summary:</strong>
+                  This scenario focused on applying security-by-design principles to Windows servers.
+                  The challenge reinforced how design choices, system configuration, and risk analysis can reduce exposure before vulnerabilities become active security incidents.
+                </p>
+
+                <p>
+                  <strong>Skills Applied:</strong>
+                </p>
+                <ul>
+                  <li>Reviewed the environment from a prevention-focused security perspective.</li>
+                  <li>Identified weaknesses that could increase risk if left unaddressed during system design or deployment.</li>
+                  <li>Applied secure server configurations to reduce exposure and improve the overall security posture.</li>
+                  <li>Connected technical decisions to real-world security outcomes such as risk reduction, resilience, and safer operations.</li>
+                  <li>Practiced explaining security decisions in a way that supports both technical and business-focused audiences.</li>
+                </ul>
+
+                <p>
+                  <strong>Documentation:</strong>
+                  A digital copy of the completion report and supporting notes is maintained separately. Public evidence is limited to a redacted completion screenshot to avoid exposing unnecessary lab details.
+                </p>
+
+                <p><strong>Evidence:</strong></p>
+                <a class="xp-report-link" href="assets/xp-cyber-range/xp-security-by-design.png" target="_blank" rel="noopener">
+                  <img src="assets/xp-cyber-range/xp-security-by-design.png" alt="XP Cyber Range report screenshot showing completion for Security by Design challenge">
+                  <div class="caption">Completion report (redacted identifiers)</div>
+                </a>
+              </div>
+            </details>
+
+            <details class="project xp-challenge">
+              <summary>
+                <span class="project-title">CISA Threat Sandbox: Spring4Shell</span>
+                <span class="project-meta muted">Spring4Shell • Validation • Remediation</span>
+              </summary>
+
+              <div class="project-body">
+                <p>
+                  <strong>Challenge Summary:</strong>
+                  This CISA Threat Sandbox scenario focused on Spring4Shell, a critical vulnerability affecting certain Java/Spring application environments.
+                  I researched the vulnerability conditions, validated exposure in a controlled lab environment, and confirmed that remediation moved the system out of a vulnerable state.
+                </p>
+
+                <p>
+                  <strong>Skills Applied:</strong>
+                </p>
+                <ul>
+                  <li>Researched CVE-2022-22965 to understand the affected technology stack, exploitation conditions, and security impact.</li>
+                  <li>Validated the vulnerability in a controlled sandbox without publishing step-by-step exploitation details.</li>
+                  <li>Used version and service awareness to determine whether the application environment was vulnerable or remediated.</li>
+                  <li>Connected the technical issue to real-world risk, including remote code execution, unauthorized access, and potential system compromise.</li>
+                  <li>Confirmed remediation by validating that the affected service was no longer exposed to the same vulnerability condition.</li>
+                  <li>Documented the assessment in a penetration test-style format with scope, objectives, findings, impact, and remediation guidance.</li>
+                </ul>
+
+                <p>
+                  <strong>Documentation:</strong>
+                  A digital copy of my penetration test-style documentation for this challenge is maintained separately.
+                  The public portfolio includes only a high-level summary and redacted completion evidence to avoid exposing unnecessary technical details.
+                </p>
+
+                <p><strong>Evidence:</strong></p>
+                <a class="xp-report-link" href="assets/xp-cyber-range/xp-spring4shell.png" target="_blank" rel="noopener">
+                  <img src="assets/xp-cyber-range/xp-spring4shell.png" alt="XP Cyber Range report screenshot showing completion for Spring4Shell challenge">
+                  <div class="caption">Completion report (redacted identifiers)</div>
+                </a>
+              </div>
+            </details>
+
+          </div>
 
           <h3>CTFs / Competitions</h3>
           <ul>
