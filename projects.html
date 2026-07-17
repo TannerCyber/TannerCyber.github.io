@@ -180,6 +180,174 @@
       </div>
     </details>
 
+    <!-- Project 3 -->
+    <details class="project">
+      <summary>
+        <span class="project-title">3) Multi-Hop SSH Tunneling Across Segmented VMware Networks</span>
+        <span class="project-meta muted">Kali Linux • Alpine Linux • VMware • SSH Port Forwarding • Hashcat</span>
+      </summary>
+
+      <div class="project-body">
+        <p>
+          <strong>Goal:</strong>
+          Design, build, and document a controlled lab environment demonstrating how SSH local
+          port forwarding can be chained across multiple isolated network segments.
+        </p>
+
+        <h3>Assignment Scope &amp; Design</h3>
+        <p>
+          The assignment required an SSH port-tunneling environment in which credentials were
+          concealed, discovered, and recovered through password-hash cracking. I designed the
+          implementation by creating the segmented VMware topology, configuring the Linux systems,
+          hosting the credential artifact through a custom web service, and constructing the
+          complete multi-hop tunnel.
+        </p>
+
+        <h3>Environment &amp; Architecture</h3>
+        <ul>
+          <li>One Kali Linux system used as the starting point for reconnaissance and tunneling.</li>
+          <li>Six Alpine Linux systems named <code>alpine1</code> through <code>alpine6</code>.</li>
+          <li>Seven isolated VMware networks spanning <code>VMnet12</code> through <code>VMnet18</code>.</li>
+          <li>Each Alpine system was dual-homed across two neighboring network segments.</li>
+          <li>SSH was configured on every Alpine system to support controlled remote access.</li>
+          <li>Apache HTTP Server was installed on <code>alpine1</code> to host the lab’s credential-discovery artifact.</li>
+        </ul>
+
+        <p>
+          Before tunnel execution, each Alpine system was validated for hostname, network
+          interfaces, SSH service status, and its TCP port 22 listener.
+        </p>
+
+        <h3>Scenario Implementation</h3>
+        <p>
+          To create the credential-discovery portion of the exercise, I generated NTLM-formatted
+          hashes from intentionally created lab passwords. The hashes were stored in a file named
+          <code>auth_cache.log</code>, placed inside a troubleshooting archive, and hosted through
+          a custom Apache page on <code>alpine1</code>.
+        </p>
+
+        <p>
+          These hashes were created specifically for the controlled exercise and were not extracted
+          from Alpine Linux password storage.
+        </p>
+
+        <h3>Reconnaissance &amp; Credential Recovery</h3>
+        <ul>
+          <li>Used Netdiscover to identify <code>alpine1</code> on Kali’s directly connected segment.</li>
+          <li>Used Nmap service detection to identify SSH on TCP port 22 and HTTP on TCP port 80.</li>
+          <li>Accessed the custom troubleshooting portal and downloaded the hosted archive.</li>
+          <li>Extracted the archive and identified the intentionally planted NTLM credential hashes.</li>
+        </ul>
+
+        <h3>Password Auditing</h3>
+        <ul>
+          <li>Prepared the recovered hashes for processing with Hashcat mode <code>1000</code> for NTLM.</li>
+          <li>Used hybrid attack mode <code>-a 6</code> to test a word followed by a digit-and-symbol mask.</li>
+          <li>Used hybrid attack mode <code>-a 7</code> to test the same mask before each word.</li>
+          <li>Recovered three passwords with the suffix-based attack and the remaining three with the prefix-based attack.</li>
+          <li>Successfully recovered all six intentionally created lab credentials.</li>
+        </ul>
+
+        <h3>Multi-Hop SSH Tunnel</h3>
+        <p>
+          I created a progressive chain of SSH local port forwards. Each new connection traveled
+          through the forwarding port created by the previous pivot system:
+        </p>
+
+        <ul>
+          <li><code>127.0.0.1:1111</code> reached Box2 through Box1.</li>
+          <li><code>127.0.0.1:2222</code> reached Box3 through Boxes 1 and 2.</li>
+          <li><code>127.0.0.1:3333</code> reached Box4 through Boxes 1–3.</li>
+          <li><code>127.0.0.1:4444</code> reached Box5 through Boxes 1–4.</li>
+          <li><code>127.0.0.1:5555</code> reached Box6 through Boxes 1–5.</li>
+        </ul>
+
+        <p>
+          Each active SSH session had to remain open because every later forwarding stage depended
+          on the tunnels established before it.
+        </p>
+
+        <h3>Troubleshooting</h3>
+        <ul>
+          <li>Resolved SSH daemon restrictions that initially prevented TCP forwarding through intermediate pivot systems.</li>
+          <li>Restarted affected SSH services after correcting forwarding-related configuration.</li>
+          <li>Validated each pivot system’s interfaces and next reachable subnet before extending the tunnel.</li>
+          <li>Separated networking, authentication, service, and forwarding issues during troubleshooting.</li>
+        </ul>
+
+        <h3>Result</h3>
+        <p>
+          Kali successfully authenticated to <code>alpine6</code> through
+          <code>127.0.0.1:5555</code>, traversing all five intermediate Alpine systems.
+          The final shell identity, hostname, and network-interface output confirmed that the
+          complete chained tunnel operated successfully.
+        </p>
+
+        <h3>Security Takeaways</h3>
+        <ul>
+          <li>Network segmentation reduces direct connectivity but can be bypassed through compromised dual-homed systems.</li>
+          <li>Predictable password structures remain vulnerable to targeted hybrid password attacks.</li>
+          <li>Sensitive internal files should not be exposed through weakly protected web services.</li>
+          <li>SSH TCP forwarding should be restricted when it is not operationally required.</li>
+          <li>Strong authentication, least privilege, and SSH monitoring help reduce lateral-movement risk.</li>
+        </ul>
+
+        <h3>Evidence</h3>
+
+        <div class="evidence-grid ssh-evidence-grid">
+          <a class="evidence-item ssh-topology-item" href="assets/ssh-tunneling/ssh-network-topology.png" target="_blank" rel="noopener">
+            <img src="assets/ssh-tunneling/ssh-network-topology.png" alt="Network topology showing Kali Linux connected through six Alpine Linux systems across isolated VMware network segments" />
+            <div class="caption">Full VMware network topology and multi-hop path</div>
+          </a>
+
+          <a class="evidence-item" href="assets/ssh-tunneling/vmware-network-editor.png" target="_blank" rel="noopener">
+            <img src="assets/ssh-tunneling/vmware-network-editor.png" alt="VMware Virtual Network Editor showing the isolated VMnet networks used in the SSH tunneling lab" />
+            <div class="caption">VMware isolated network configuration</div>
+          </a>
+
+          <a class="evidence-item" href="assets/ssh-tunneling/netdiscover-box1.png" target="_blank" rel="noopener">
+            <img src="assets/ssh-tunneling/netdiscover-box1.png" alt="Netdiscover results identifying the first Alpine Linux system on the initial network segment" />
+            <div class="caption">Discovery of Box1 from Kali</div>
+          </a>
+
+          <a class="evidence-item" href="assets/ssh-tunneling/nmap-box1-services.png" target="_blank" rel="noopener">
+            <img src="assets/ssh-tunneling/nmap-box1-services.png" alt="Nmap results showing SSH and HTTP services exposed on the first Alpine Linux system" />
+            <div class="caption">Nmap service enumeration of Box1</div>
+          </a>
+
+          <a class="evidence-item" href="assets/ssh-tunneling/hashcat-final-results.png" target="_blank" rel="noopener">
+            <img src="assets/ssh-tunneling/hashcat-final-results.png" alt="Sanitized Hashcat results showing all six NTLM-formatted lab credentials recovered" />
+            <div class="caption">Hashcat results showing all six lab credentials recovered</div>
+          </a>
+
+          <a class="evidence-item" href="assets/ssh-tunneling/tunnel-1-created.png" target="_blank" rel="noopener">
+            <img src="assets/ssh-tunneling/tunnel-1-created.png" alt="Terminal showing creation of the first SSH local port forward from Kali through Box1" />
+            <div class="caption">First SSH forwarding stage created</div>
+          </a>
+
+          <a class="evidence-item" href="assets/ssh-tunneling/tunnel-1-next-segment.png" target="_blank" rel="noopener">
+            <img src="assets/ssh-tunneling/tunnel-1-next-segment.png" alt="Terminal showing network-interface validation and host discovery from the first Alpine Linux pivot" />
+            <div class="caption">Next isolated segment discovered from the first pivot</div>
+          </a>
+
+          <a class="evidence-item" href="assets/ssh-tunneling/tunnel-5-created.png" target="_blank" rel="noopener">
+            <img src="assets/ssh-tunneling/tunnel-5-created.png" alt="Terminal showing creation of the fifth and final SSH local port forward" />
+            <div class="caption">Final SSH forwarding stage created</div>
+          </a>
+
+          <a class="evidence-item" href="assets/ssh-tunneling/tunnel-5-next-segment.png" target="_blank" rel="noopener">
+            <img src="assets/ssh-tunneling/tunnel-5-next-segment.png" alt="Terminal showing interface validation and discovery of the final Alpine Linux system" />
+            <div class="caption">Final target segment discovered through the tunnel chain</div>
+          </a>
+
+          <a class="evidence-item" href="assets/ssh-tunneling/final-access-box6.png" target="_blank" rel="noopener">
+            <img src="assets/ssh-tunneling/final-access-box6.png" alt="Terminal showing successful SSH access to alpine6 through local port 5555" />
+            <div class="caption">Successful end-to-end access to Box6 through the complete tunnel</div>
+          </a>
+        </div>
+      </div>
+    </details>
+
   </main>
 
   <footer>

@@ -326,6 +326,21 @@ code {
   display: block;
 }
 
+/* --- SSH tunneling project evidence --- */
+.ssh-evidence-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ssh-evidence-grid .evidence-item img {
+  height: auto;
+  object-fit: contain;
+  background: #05070c;
+}
+
+.ssh-topology-item {
+  grid-column: 1 / -1;
+}
+
 .caption {
   padding: 10px 10px 11px;
   color: var(--muted);
@@ -634,6 +649,14 @@ footer {
   .project-meta {
     text-align: left;
     margin-left: 0;
+  }
+
+  .ssh-evidence-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ssh-topology-item {
+    grid-column: auto;
   }
 }
 

@@ -157,6 +157,22 @@ https://tannercyber.github.io/projects.html
 
 ---
 
+### 🔹 Multi-Hop SSH Tunneling Across Segmented VMware Networks
+**Goal:** Design and validate a chained SSH port-forwarding environment across multiple isolated network segments.
+
+**Highlights:**
+- Built a segmented VMware lab using Kali Linux and six dual-homed Alpine Linux systems
+- Created an Apache-hosted credential-discovery scenario
+- Recovered six intentionally generated lab credentials using Hashcat hybrid attacks
+- Constructed five progressive SSH local port forwards across isolated networks
+- Verified successful end-to-end access to the final Alpine system
+- Documented troubleshooting, security risks, and defensive takeaways
+
+➡️ **Full writeup & sanitized evidence:**  
+https://tannercyber.github.io/projects.html
+
+---
+
 ## 🧪 Labs & Hands-On Practice
 
 **Blue Team / SOC**
