@@ -34,76 +34,6 @@
 
           <hr>
 
-          <h2>SOC & Incident Response Labs</h2>
-          <p class="muted">
-  Deeper write-ups and evidence-based deliverables are documented on the <a href="projects.html">Projects</a> page.
-</p>
-
-          <h3>Incident Response Workflow Lab (detect → triage → contain → document)</h3>
-          <ul>
-            <li>Practiced IR flow: initial detection signals, scope/impact assessment, containment actions, and recovery planning.</li>
-            <li>Documented findings in a clear analyst style: indicators, affected hosts/users, timeline, and recommended next steps.</li>
-            <li>Focused on “tell the story with evidence” — what happened, why it matters, and what to do now.</li>
-          </ul>
-
-          <h3>Windows Log Hunting Lab (Event Viewer)</h3>
-          <ul>
-            <li>Reviewed Windows Security logs to identify abnormal authentication activity and suspicious user behavior.</li>
-            <li>Mapped findings to common attacker behaviors (failed logon bursts, privilege changes, unusual logon types).</li>
-            <li>Practiced concise reporting suitable for SOC escalation or ticket notes.</li>
-          </ul>
-
-          <h3>IOC Identification Lab (structured logs / datasets)</h3>
-          <ul>
-            <li>Extracted and validated indicators (domains, IPs, hashes) and correlated related events.</li>
-            <li>Built a short incident narrative supported by evidence (what/when/how often).</li>
-            <li>Recommended actions: block/monitor, detection tuning, and follow-on investigation pivots.</li>
-          </ul>
-
-          <h3>TryHackMe — SOC / Blue Team Rooms</h3>
-          <ul>
-            <li>Completed SOC-focused labs reinforcing alert triage, investigation thinking, and fundamentals.</li>
-            <li>Strengthened analyst habits: verifying assumptions, documenting evidence, and communicating clearly.</li>
-          </ul>
-
-          <hr>
-
-          <h2>Network & Security Testing Labs</h2>
-
-          <h3>Network Traffic Analysis Lab (PCAP triage)</h3>
-          <ul>
-            <li>Wireshark PCAP analysis to identify ports/services, suspicious patterns, and potential beaconing behavior.</li>
-            <li>Protocol review (TCP, UDP, DNS, HTTP/HTTPS) and stream reconstruction where applicable.</li>
-            <li>Conversation/statistics views to establish baselines and spot anomalies quickly.</li>
-          </ul>
-
-          <h3>Wireless Security Lab (WPA2 — owned network)</h3>
-          <ul>
-            <li>Captured a WPA2 handshake in a controlled environment to validate Wi-Fi credential strength.</li>
-            <li>Performed an offline password audit using Kali Linux tooling and GPU-accelerated cracking with Hashcat.</li>
-            <li>Documented security takeaways and recommended mitigations such as stronger passphrases and modern Wi-Fi standards (WPA3), based on observed weaknesses.</li>
-          </ul>
-
-          <h3>Recon & Vulnerability Scanning Lab (owned network)</h3>
-          <ul>
-            <li>Nmap discovery + service enumeration to validate exposed services and reduce unknowns.</li>
-            <li>Nessus Essentials scanning for common misconfigurations and patch gaps (lab scope).</li>
-            <li>Converted findings into prioritized remediation notes (risk, impact, and quick fixes).</li>
-          </ul>
-
-          <hr>
-
-          <h2>Digital Forensics Labs</h2>
-
-          <h3>File System Forensics Lab (NTFS / exFAT)</h3>
-          <ul>
-            <li>File system and artifact analysis using FTK Imager and hex editors.</li>
-            <li>$MFT / metadata interpretation (timestamps, attributes, allocation status) and timeline reconstruction.</li>
-            <li>Evidence handling habits: integrity-minded documentation and repeatable steps.</li>
-          </ul>
-
-          <hr>
-
           <h2>Cyber Range & CISA Threat Sandbox Challenges</h2>
           <p class="muted">
             Scenario-based challenges and CTF-style environments used to practice investigation, response, and technical problem solving.
@@ -118,6 +48,83 @@
           </p>
 
           <div class="xp-challenge-list">
+
+            <details class="project xp-challenge">
+              <summary>
+                <span class="project-title">CISA Threat Sandbox: Spring4Shell</span>
+                <span class="project-meta muted">Spring4Shell • Validation • Remediation</span>
+              </summary>
+
+              <div class="project-body">
+                <p>
+                  <strong>Challenge Summary:</strong>
+                  This CISA Threat Sandbox scenario focused on Spring4Shell, a critical vulnerability affecting certain Java/Spring application environments.
+                  I researched the vulnerability conditions, validated exposure in a controlled lab environment, and confirmed that remediation moved the system out of a vulnerable state.
+                </p>
+
+                <p>
+                  <strong>Skills Applied:</strong>
+                </p>
+                <ul>
+                  <li>Researched CVE-2022-22965 to understand the affected technology stack, exploitation conditions, and security impact.</li>
+                  <li>Validated the vulnerability in a controlled sandbox without publishing step-by-step exploitation details.</li>
+                  <li>Used version and service awareness to determine whether the application environment was vulnerable or remediated.</li>
+                  <li>Connected the technical issue to real-world risk, including remote code execution, unauthorized access, and potential system compromise.</li>
+                  <li>Confirmed remediation by validating that the affected service was no longer exposed to the same vulnerability condition.</li>
+                  <li>Documented the assessment in a penetration test-style format with scope, objectives, findings, impact, and remediation guidance.</li>
+                </ul>
+
+                <p>
+                  <strong>Documentation:</strong>
+                  A digital copy of my penetration test-style documentation for this challenge is maintained separately.
+                  The public portfolio includes only a high-level summary and redacted completion evidence to avoid exposing unnecessary technical details.
+                </p>
+
+                <p><strong>Evidence:</strong></p>
+                <a class="xp-report-link" href="assets/xp-cyber-range/xp-spring4shell.png" target="_blank" rel="noopener">
+                  <img src="assets/xp-cyber-range/xp-spring4shell.png" alt="XP Cyber Range report screenshot showing completion for Spring4Shell challenge">
+                  <div class="caption">Completion report (redacted identifiers)</div>
+                </a>
+              </div>
+            </details>
+
+            <details class="project xp-challenge">
+              <summary>
+                <span class="project-title">CISA Threat Sandbox: Apache Proxy4All</span>
+                <span class="project-meta muted">SSRF • Apache • Remediation</span>
+              </summary>
+
+              <div class="project-body">
+                <p>
+                  <strong>Challenge Summary:</strong>
+                  This CISA Threat Sandbox scenario focused on understanding and responding to an Apache-related server-side request forgery vulnerability.
+                  I researched how the vulnerability could allow unintended internal requests, validated the issue in a controlled lab environment, and confirmed that remediation reduced the exposure.
+                </p>
+
+                <p>
+                  <strong>Skills Applied:</strong>
+                </p>
+                <ul>
+                  <li>Researched the vulnerability behavior, affected service, and security impact before testing.</li>
+                  <li>Validated the issue in a controlled environment without publishing step-by-step exploitation details.</li>
+                  <li>Used service/version awareness to understand whether the system was exposed or remediated.</li>
+                  <li>Connected the technical finding to real-world risk, including internal service exposure and unauthorized request paths.</li>
+                  <li>Documented the assessment in a penetration test-style format with scope, objectives, findings, impact, and remediation guidance.</li>
+                </ul>
+
+                <p>
+                  <strong>Documentation:</strong>
+                  A digital copy of my penetration test-style documentation for this challenge is maintained separately.
+                  The public portfolio includes only a high-level summary and redacted completion evidence to avoid exposing unnecessary technical details.
+                </p>
+
+                <p><strong>Evidence:</strong></p>
+                <a class="xp-report-link" href="assets/xp-cyber-range/xp-apache-proxy4all.png" target="_blank" rel="noopener">
+                  <img src="assets/xp-cyber-range/xp-apache-proxy4all.png" alt="XP Cyber Range report screenshot showing completion for Apache Proxy4All challenge">
+                  <div class="caption">Completion report (redacted identifiers)</div>
+                </a>
+              </div>
+            </details>
 
             <details class="project xp-challenge">
               <summary>
@@ -193,44 +200,6 @@
 
             <details class="project xp-challenge">
               <summary>
-                <span class="project-title">CISA Threat Sandbox: Apache Proxy4All</span>
-                <span class="project-meta muted">SSRF • Apache • Remediation</span>
-              </summary>
-
-              <div class="project-body">
-                <p>
-                  <strong>Challenge Summary:</strong>
-                  This CISA Threat Sandbox scenario focused on understanding and responding to an Apache-related server-side request forgery vulnerability.
-                  I researched how the vulnerability could allow unintended internal requests, validated the issue in a controlled lab environment, and confirmed that remediation reduced the exposure.
-                </p>
-
-                <p>
-                  <strong>Skills Applied:</strong>
-                </p>
-                <ul>
-                  <li>Researched the vulnerability behavior, affected service, and security impact before testing.</li>
-                  <li>Validated the issue in a controlled environment without publishing step-by-step exploitation details.</li>
-                  <li>Used service/version awareness to understand whether the system was exposed or remediated.</li>
-                  <li>Connected the technical finding to real-world risk, including internal service exposure and unauthorized request paths.</li>
-                  <li>Documented the assessment in a penetration test-style format with scope, objectives, findings, impact, and remediation guidance.</li>
-                </ul>
-
-                <p>
-                  <strong>Documentation:</strong>
-                  A digital copy of my penetration test-style documentation for this challenge is maintained separately.
-                  The public portfolio includes only a high-level summary and redacted completion evidence to avoid exposing unnecessary technical details.
-                </p>
-
-                <p><strong>Evidence:</strong></p>
-                <a class="xp-report-link" href="assets/xp-cyber-range/xp-apache-proxy4all.png" target="_blank" rel="noopener">
-                  <img src="assets/xp-cyber-range/xp-apache-proxy4all.png" alt="XP Cyber Range report screenshot showing completion for Apache Proxy4All challenge">
-                  <div class="caption">Completion report (redacted identifiers)</div>
-                </a>
-              </div>
-            </details>
-
-            <details class="project xp-challenge">
-              <summary>
                 <span class="project-title">System Administration: Security by Design</span>
                 <span class="project-meta muted">Secure design • Risk reduction</span>
               </summary>
@@ -266,46 +235,79 @@
               </div>
             </details>
 
-            <details class="project xp-challenge">
-              <summary>
-                <span class="project-title">CISA Threat Sandbox: Spring4Shell</span>
-                <span class="project-meta muted">Spring4Shell • Validation • Remediation</span>
-              </summary>
-
-              <div class="project-body">
-                <p>
-                  <strong>Challenge Summary:</strong>
-                  This CISA Threat Sandbox scenario focused on Spring4Shell, a critical vulnerability affecting certain Java/Spring application environments.
-                  I researched the vulnerability conditions, validated exposure in a controlled lab environment, and confirmed that remediation moved the system out of a vulnerable state.
-                </p>
-
-                <p>
-                  <strong>Skills Applied:</strong>
-                </p>
-                <ul>
-                  <li>Researched CVE-2022-22965 to understand the affected technology stack, exploitation conditions, and security impact.</li>
-                  <li>Validated the vulnerability in a controlled sandbox without publishing step-by-step exploitation details.</li>
-                  <li>Used version and service awareness to determine whether the application environment was vulnerable or remediated.</li>
-                  <li>Connected the technical issue to real-world risk, including remote code execution, unauthorized access, and potential system compromise.</li>
-                  <li>Confirmed remediation by validating that the affected service was no longer exposed to the same vulnerability condition.</li>
-                  <li>Documented the assessment in a penetration test-style format with scope, objectives, findings, impact, and remediation guidance.</li>
-                </ul>
-
-                <p>
-                  <strong>Documentation:</strong>
-                  A digital copy of my penetration test-style documentation for this challenge is maintained separately.
-                  The public portfolio includes only a high-level summary and redacted completion evidence to avoid exposing unnecessary technical details.
-                </p>
-
-                <p><strong>Evidence:</strong></p>
-                <a class="xp-report-link" href="assets/xp-cyber-range/xp-spring4shell.png" target="_blank" rel="noopener">
-                  <img src="assets/xp-cyber-range/xp-spring4shell.png" alt="XP Cyber Range report screenshot showing completion for Spring4Shell challenge">
-                  <div class="caption">Completion report (redacted identifiers)</div>
-                </a>
-              </div>
-            </details>
-
           </div>
+
+          <hr>
+
+          <h2>Network & Security Testing Labs</h2>
+
+          <h3>Network Traffic Analysis Lab (PCAP triage)</h3>
+          <ul>
+            <li>Wireshark PCAP analysis to identify ports/services, suspicious patterns, and potential beaconing behavior.</li>
+            <li>Protocol review (TCP, UDP, DNS, HTTP/HTTPS) and stream reconstruction where applicable.</li>
+            <li>Conversation/statistics views to establish baselines and spot anomalies quickly.</li>
+          </ul>
+
+          <h3>Wireless Security Lab (WPA2 — owned network)</h3>
+          <ul>
+            <li>Captured a WPA2 handshake in a controlled environment to validate Wi-Fi credential strength.</li>
+            <li>Performed an offline password audit using Kali Linux tooling and GPU-accelerated cracking with Hashcat.</li>
+            <li>Documented security takeaways and recommended mitigations such as stronger passphrases and modern Wi-Fi standards (WPA3), based on observed weaknesses.</li>
+          </ul>
+
+          <h3>Recon & Vulnerability Scanning Lab (owned network)</h3>
+          <ul>
+            <li>Nmap discovery + service enumeration to validate exposed services and reduce unknowns.</li>
+            <li>Nessus Essentials scanning for common misconfigurations and patch gaps (lab scope).</li>
+            <li>Converted findings into prioritized remediation notes (risk, impact, and quick fixes).</li>
+          </ul>
+
+          <hr>
+
+          <h2>SOC & Incident Response Labs</h2>
+          <p class="muted">
+  Deeper write-ups and evidence-based deliverables are documented on the <a href="projects.html">Projects</a> page.
+</p>
+
+          <h3>Incident Response Workflow Lab (detect → triage → contain → document)</h3>
+          <ul>
+            <li>Practiced IR flow: initial detection signals, scope/impact assessment, containment actions, and recovery planning.</li>
+            <li>Documented findings in a clear analyst style: indicators, affected hosts/users, timeline, and recommended next steps.</li>
+            <li>Focused on “tell the story with evidence” — what happened, why it matters, and what to do now.</li>
+          </ul>
+
+          <h3>Windows Log Hunting Lab (Event Viewer)</h3>
+          <ul>
+            <li>Reviewed Windows Security logs to identify abnormal authentication activity and suspicious user behavior.</li>
+            <li>Mapped findings to common attacker behaviors (failed logon bursts, privilege changes, unusual logon types).</li>
+            <li>Practiced concise reporting suitable for SOC escalation or ticket notes.</li>
+          </ul>
+
+          <h3>IOC Identification Lab (structured logs / datasets)</h3>
+          <ul>
+            <li>Extracted and validated indicators (domains, IPs, hashes) and correlated related events.</li>
+            <li>Built a short incident narrative supported by evidence (what/when/how often).</li>
+            <li>Recommended actions: block/monitor, detection tuning, and follow-on investigation pivots.</li>
+          </ul>
+
+          <h3>TryHackMe — SOC / Blue Team Rooms</h3>
+          <ul>
+            <li>Completed SOC-focused labs reinforcing alert triage, investigation thinking, and fundamentals.</li>
+            <li>Strengthened analyst habits: verifying assumptions, documenting evidence, and communicating clearly.</li>
+          </ul>
+
+          <hr>
+
+          <h2>Digital Forensics Labs</h2>
+
+          <h3>File System Forensics Lab (NTFS / exFAT)</h3>
+          <ul>
+            <li>File system and artifact analysis using FTK Imager and hex editors.</li>
+            <li>$MFT / metadata interpretation (timestamps, attributes, allocation status) and timeline reconstruction.</li>
+            <li>Evidence handling habits: integrity-minded documentation and repeatable steps.</li>
+          </ul>
+
+          <hr>
 
           <h3>CTFs / Competitions</h3>
           <ul>
@@ -319,15 +321,15 @@
           <div class="card sidecard">
             <h3>Quick Lab Index</h3>
             <ul>
+              <li>XP Cyber Range (NIST-aligned)</li>
+              <li>PCAP triage (Wireshark)</li>
+              <li>Wireless security (WPA2 audit)</li>
+              <li>Recon & vulnerability scanning</li>
               <li>SOC / Incident Response workflow</li>
               <li>Windows event log hunting</li>
               <li>IOC identification</li>
               <li>TryHackMe (SOC / Blue Team)</li>
-              <li>PCAP triage (Wireshark)</li>
-              <li>Wireless security (WPA2 audit)</li>
-              <li>Recon & vulnerability scanning</li>
               <li>Digital forensics (NTFS, exFAT)</li>
-              <li>XP Cyber Range (NIST-aligned)</li>
               <li>NCL</li>
               <li>MetaCTF</li>
             </ul>

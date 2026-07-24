@@ -1,6 +1,6 @@
 # 🛡️ Tanner — Cybersecurity Portfolio
 
-Cybersecurity student focused on **incident response**, **vulnerability assessment**, **digital forensics**, and **practical security testing using industry-standard tools**.  
+Cybersecurity graduate focused on **incident response**, **vulnerability assessment**, **digital forensics**, and **practical security testing using industry-standard tools**.  
 This repository serves as the technical backbone to my portfolio website, showcasing real projects, lab work, and supporting evidence.
 
 🌐 **Portfolio Website:** https://tannercyber.github.io  
@@ -39,7 +39,7 @@ All public material is **sanitized** to avoid exposing sensitive data while stil
   - Translating technical findings into security impact
 
 - **Digital Forensics**
-  - File system analysis of FAT and NTFS volumes
+  - File system analysis of FAT, NTFS, and exFAT volumes
   - Parsing file system structures and metadata at the artifact level
   - NTFS analysis including $MFT records and attribute parsing (e.g., filename, standard information)
   - Timeline reconstruction and evidence interpretation from disk images
@@ -67,27 +67,21 @@ All public material is **sanitized** to avoid exposing sensitive data while stil
 
 ## 🛠️ Tools & Technologies
 
-**Security Operations & Logs**
+**Security & Network Analysis**
 - Windows Event Viewer
 - Microsoft Defender
-- SIEM lab workflows
-- JSON log analysis
-
-**Network & Traffic**
 - Wireshark
 - Nmap
 - tcpdump
-- Zeek
-- RITA
-- DNS analysis
 
 **Offensive Security Labs**
 - Kali Linux
 - Metasploit
-- msfconsole
 - msfvenom
 - Aircrack-ng suite
 - Hashcat
+- Nessus Essentials
+- Netdiscover
 - SSH tunneling
 
 **Digital Forensics**
@@ -97,21 +91,19 @@ All public material is **sanitized** to avoid exposing sensitive data while stil
 - HxD
 - Autopsy
 - Registry Explorer
-- NTFS / FAT analysis
-- Hash identification
-- Evidence hash verification
+- NTFS / FAT / exFAT analysis
 
 **Cloud & Identity**
 - Microsoft Azure
-- Azure AD / Entra ID
+- Microsoft Entra ID
 - Azure networking
 - Network Security Groups
-- Backup and disaster recovery concepts
 
 **Systems & Virtualization**
 - Windows Server
 - Active Directory
 - Linux
+- Apache HTTP Server
 - Pi-hole
 - VMware Workstation
 - Docker
@@ -130,6 +122,7 @@ All public material is **sanitized** to avoid exposing sensitive data while stil
 ## 📂 Featured Projects
 
 ### 🔹 Pi-hole Home DNS Deployment
+
 **Goal:** Reduce ad/tracker traffic while maintaining reliability across a production home network.
 
 **Highlights:**
@@ -144,6 +137,7 @@ https://tannercyber.github.io/projects.html
 ---
 
 ### 🔹 Incident Response Log Analysis & IOC Extraction
+
 **Goal:** Extract actionable indicators of compromise from structured log data.
 
 **Highlights:**
@@ -158,6 +152,7 @@ https://tannercyber.github.io/projects.html
 ---
 
 ### 🔹 Multi-Hop SSH Tunneling Across Segmented VMware Networks
+
 **Goal:** Design and validate a chained SSH port-forwarding environment across multiple isolated network segments.
 
 **Highlights:**
@@ -190,8 +185,9 @@ https://tannercyber.github.io/projects.html
 - $MFT record parsing
 - Timeline reconstruction
 
-**Ranges & CTFs**
-- XP Cyber Range (NIST-aligned scenarios)
+**Cyber Ranges & CTFs**
+- CISA Threat Sandbox vulnerability assessments
+- XP Cyber Range security scenarios
 - National Cyber League (NCL)
 - MetaCTF
 
@@ -203,7 +199,7 @@ https://tannercyber.github.io/labs.html
 ## 🎓 Certifications & Relevant Coursework
 
 **Certifications**
-- CompTIA IT Fundamentals (ITF+)
+- TestOut IT Fundamentals Pro
 - Microsoft Azure Fundamentals (AZ-900)
 
 **Relevant College Coursework & Hands-On Training**
@@ -226,4 +222,4 @@ https://tannercyber.github.io/labs.html
 
 ---
 
-> This repository and portfolio are actively maintained as I complete new labs, projects, and coursework.
+> This repository and portfolio are actively maintained as I complete new labs and projects, strengthen my technical skills, and expand my hands-on cybersecurity experience.

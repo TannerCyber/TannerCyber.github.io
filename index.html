@@ -29,9 +29,10 @@
   <p class="eyebrow">Cybersecurity Portfolio</p>
   <h1>Hands-on cybersecurity work, write-ups, and labs.</h1>
   <p class="hero-text">
-    I’m Tanner, a cybersecurity graduate building practical experience through labs,
-    projects, and technical write-ups focused on incident response, digital forensics,
-    system security, and cloud fundamentals.
+    I’m Tanner, a cybersecurity graduate with hands-on experience in incident response,
+    vulnerability assessment, digital forensics, network security, and systems administration.
+    This portfolio documents controlled labs and projects through technical write-ups and
+    sanitized supporting evidence.
   </p>
 
   <div class="hero-actions">
@@ -42,38 +43,79 @@
 
 <hr>
 
+<section class="featured-section">
+  <h2>Featured Work</h2>
+  <p class="section-intro">
+    Selected work demonstrating practical security analysis, testing, documentation, and problem solving.
+  </p>
+
+  <div class="featured-grid">
+    <article class="featured-card">
+      <p class="featured-label">Network Security Project</p>
+      <h3>Multi-Hop SSH Tunneling</h3>
+      <p>
+        Designed and validated a five-stage SSH local port-forwarding chain across
+        segmented VMware networks, supported by sanitized evidence.
+      </p>
+      <a class="featured-link" href="projects.html">View project →</a>
+    </article>
+
+    <article class="featured-card">
+      <p class="featured-label">Vulnerability Assessment</p>
+      <h3>Spring4Shell Assessment</h3>
+      <p>
+        Researched and validated CVE-2022-22965 in a controlled CISA Threat Sandbox,
+        documented its risk, and confirmed remediation.
+      </p>
+      <a class="featured-link" href="labs.html">View lab →</a>
+    </article>
+
+    <article class="featured-card">
+      <p class="featured-label">Incident Response</p>
+      <h3>IOC Analysis &amp; Extraction</h3>
+      <p>
+        Analyzed SIEM-style JSON telemetry and used Python to extract actionable
+        indicators, suspicious activity, and response recommendations.
+      </p>
+      <a class="featured-link" href="projects.html">View project →</a>
+    </article>
+  </div>
+</section>
+
+<hr>
+
 <section class="focus-section">
   <h2>Focus Areas</h2>
   <div class="focus-grid">
     <article class="focus-card">
-      <h3>Incident Response</h3>
+      <h3>Security Operations &amp; Incident Response</h3>
       <p>
-        Log review, IOC identification, triage thinking, and evidence-based write-ups
-        built through coursework, labs, and investigation exercises.
+        Log analysis, IOC identification, alert triage, containment thinking, and
+        evidence-based reporting.
+      </p>
+    </article>
+
+    <article class="focus-card">
+      <h3>Vulnerability Assessment &amp; Remediation</h3>
+      <p>
+        Service enumeration, controlled vulnerability validation, risk analysis,
+        remediation guidance, and post-remediation verification.
+      </p>
+    </article>
+
+    <article class="focus-card">
+      <h3>Network &amp; Infrastructure Security</h3>
+      <p>
+        Network segmentation, traffic analysis, SSH tunneling, DNS security, system
+        hardening, and secure administration.
       </p>
     </article>
 
     <article class="focus-card">
       <h3>Digital Forensics</h3>
       <p>
-        File system analysis, artifact review, timeline reconstruction, and disk image
-        handling using repeatable forensic workflows.
-      </p>
-    </article>
-
-    <article class="focus-card">
-      <h3>Offensive Security</h3>
-      <p>
-        Controlled lab work involving enumeration, exploitation workflows, tunneling,
-        payload generation, and hands-on use of common offensive security tools.
-      </p>
-    </article>
-
-    <article class="focus-card">
-      <h3>Cloud &amp; Systems</h3>
-      <p>
-        Azure, Windows Server, Active Directory, Linux administration, and core
-        infrastructure concepts tied to security and operational reliability.
+        Disk imaging, file-system analysis, artifact examination, timeline
+        reconstruction, and evidence-integrity workflows.
       </p>
     </article>
   </div>
@@ -89,24 +131,13 @@
 
   <div class="tools-grid">
     <article class="tool-card">
-      <h3>Security Operations &amp; Logs</h3>
+      <h3>Security &amp; Network Analysis</h3>
       <div class="tool-tags">
         <span>Windows Event Viewer</span>
         <span>Microsoft Defender</span>
-        <span>SIEM lab workflows</span>
-        <span>JSON log analysis</span>
-      </div>
-    </article>
-
-    <article class="tool-card">
-      <h3>Network &amp; Traffic</h3>
-      <div class="tool-tags">
         <span>Wireshark</span>
         <span>Nmap</span>
         <span>tcpdump</span>
-        <span>Zeek</span>
-        <span>RITA</span>
-        <span>DNS analysis</span>
       </div>
     </article>
 
@@ -115,10 +146,11 @@
   <div class="tool-tags">
     <span>Kali Linux</span>
     <span>Metasploit</span>
-    <span>msfconsole</span>
     <span>msfvenom</span>
     <span>Aircrack-ng suite</span>
     <span>Hashcat</span>
+    <span>Nessus Essentials</span>
+    <span>Netdiscover</span>
     <span>SSH tunneling</span>
   </div>
 </article>
@@ -132,9 +164,7 @@
     <span>HxD</span>
     <span>Autopsy</span>
     <span>Registry Explorer</span>
-    <span>NTFS / FAT analysis</span>
-    <span>Hash identification</span>
-    <span>Evidence hash verification</span>
+    <span>NTFS / FAT / exFAT analysis</span>
   </div>
 </article>
 
@@ -142,10 +172,9 @@
       <h3>Cloud &amp; Identity</h3>
       <div class="tool-tags">
         <span>Microsoft Azure</span>
-        <span>Azure AD / Entra ID</span>
+        <span>Microsoft Entra ID</span>
         <span>Azure networking</span>
         <span>Network Security Groups</span>
-        <span>Backup / DR concepts</span>
       </div>
     </article>
 
@@ -155,6 +184,7 @@
         <span>Windows Server</span>
         <span>Active Directory</span>
         <span>Linux</span>
+        <span>Apache HTTP Server</span>
         <span>Pi-hole</span>
         <span>VMware Workstation</span>
         <span>Docker</span>
@@ -180,20 +210,18 @@
 
       <h2>Certifications</h2>
       <ul>
-        <li>CompTIA IT Fundamentals (ITF+)</li>
+        <li>TestOut IT Fundamentals Pro</li>
         <li>Microsoft Azure Fundamentals (AZ-900)</li>
       </ul>
 
       <h2>Relevant College Coursework & Hands-On Training</h2>
 <ul>
-  <li>Ethical Hacking coursework (enumeration, exploitation workflows, Metasploit, tunneling, and payload generation)</li>
-  <li>Cybersecurity Analyst coursework (CySA+ aligned blue-team operations, alert triage, log analysis, and incident response)</li>
-  <li>Digital Forensics Analysis coursework (disk imaging, file system analysis, artifact review, and forensic documentation)</li>
-  <li>Server Administration coursework (Windows Server, Active Directory, system administration, and infrastructure fundamentals)</li>
-  <li>Linux Administration coursework (Linux command line, users, permissions, services, and system management)</li>
-  <li>Cloud Essentials coursework (cloud service models, Azure fundamentals, networking, identity, and security concepts)</li>
-  <li>SQL Database Concepts coursework (database design, SQL queries, joins, and relational database fundamentals)</li>
-  <li>CTF and cyber range participation (NCL, MetaCTF, XP Cyber Range, and TryHackMe labs)</li>
+  <li>Cybersecurity Analysis &amp; Incident Response</li>
+  <li>Ethical Hacking &amp; Security Testing</li>
+  <li>Digital Forensics</li>
+  <li>Windows Server, Linux &amp; Cloud Administration</li>
+  <li>SQL &amp; Database Fundamentals</li>
+  <li>Cyber Ranges &amp; CTFs</li>
 </ul>
     </main>
 
